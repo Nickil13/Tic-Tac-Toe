@@ -1,6 +1,18 @@
 import React, { useState } from "react";
+import Board from "./components/Board";
+
 function App() {
     const [turn, setTurn] = useState(0);
+    const [isGameOver, setIsGameOver] = useState(false);
+
+    const nextTurn = () => {
+        if (turn === 0) {
+            setTurn(1);
+        } else {
+            setTurn(0);
+        }
+    };
+
     return (
         <div className="App">
             <div className="container">
@@ -23,7 +35,7 @@ function App() {
                         <h2>Player 2</h2>
                     </div>
                 </div>
-                <div className="grid"></div>
+                <Board nextTurn={nextTurn} turn={turn} />
             </div>
         </div>
     );

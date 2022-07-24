@@ -68,3 +68,30 @@ body {
     background-color: var(--clr-neutral);
     margin-right: 1rem;
 }
+
+.board {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.row {
+    display: flex;
+}
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--clr-neutral);
+    cursor: pointer;
+}
+.tile:hover {
+    background-color: #ffffff33;
+}
+.tile .circle,
+.tile .square {
+    height: 80px;
+    width: 80px;
+}
