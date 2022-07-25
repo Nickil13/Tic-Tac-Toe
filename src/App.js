@@ -31,9 +31,6 @@ function App() {
     const resetBoard = () => {
         const emptyBoard = board.map(() => ["", "", ""]);
         setBoard(emptyBoard);
-        if (turn === 1) {
-            nextTurn();
-        }
     };
 
     const isMatching = (list) => {
