@@ -15,3 +15,9 @@ To run the project in development, make sure you have the following criteria met
 2.  Install required packages using `npm i`
 
 3.  Start the project with `npm start`. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Playing the game
+
+Take turns clicking the board tiles. The first player with a full row, column or diagonal of their shape wins.
+
+Have fun!
