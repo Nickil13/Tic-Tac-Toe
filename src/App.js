@@ -8,21 +8,26 @@ function App() {
     const [modalShowing, setModalShowing] = useState(false);
 
     const nextTurn = () => {
-        if (turn === 0) {
-            setTurn(1);
-        } else {
-            setTurn(0);
+        if (!isGameOver) {
+            if (turn === 0) {
+                setTurn(1);
+            } else {
+                setTurn(0);
+            }
         }
     };
 
+    const gameOver = () => {
+        setModalShowing(true);
+        setIsGameOver(true);
+    };
     useEffect(() => {
-        if (isGameOver) {
+        if (modalShowing) {
             document.body.style.overflow = "hidden";
-            setModalShowing(true);
         } else {
             document.body.style.overflow = "visible";
         }
-    }, [isGameOver]);
+    }, [modalShowing]);
 
     return (
         <div className="App">
@@ -49,7 +54,7 @@ function App() {
                 <Board
                     nextTurn={nextTurn}
                     turn={turn}
-                    setIsGameOver={setIsGameOver}
+                    setIsGameOver={gameOver}
                 />
             </div>
             {modalShowing && (

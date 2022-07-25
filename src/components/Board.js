@@ -64,9 +64,8 @@ export default function Board({ turn, nextTurn, setIsGameOver }) {
             const isGameOver = checkIfGameOver();
             if (isGameOver) {
                 setIsGameOver(true);
-            } else {
-                nextTurn();
             }
+            nextTurn();
         }
     };
 
